@@ -1,0 +1,30 @@
+touch .gitignore
+git config --global user.name Harry
+git config --global user.email youremail@example.com
+git init
+git add .
+git commit -m "Initial Commit"
+git commit -a -m "adding some files" # files staged bhi ho jaayegi or commit bhi ho jaayegi
+git status # Just to see
+git checkout filename # last commit se match kara dega
+git checkout -f # isse all files ko last commit se match kara dega
+git log # see all commits
+git log -p -number # commits ko filter karta hai or jitne commit dekhna hai wo number ki jagah likhna hai Or q press karne se exit hote hai
+git diff # ye working tree ko staging area se compare karega
+git rm --cached filename # file ko staged area se remove karne ke liye
+git rm filename # file ko staged or local storage done se remove karne ke liye
+touch .gitignore
+	mylogs.log # is tarah file ka naam likhne se root se leke child tak ke folder mein kahi bhi mylogs.log wali file hogi to use ye ignore kar dega
+	/mylogs.log # ab kewal root mein jo mylogs.log wali file ko hi ignore karega
+	log/ # ab ye poore log wale folder ko hi ignore karega
+	*html # ab ye saari .html files ko ignore karega
+git branch branchname # isse new branch ban jaayegi
+git branch # see all branch
+git checkout branchname # branch ke beech switch bhi kar sakte hai
+git merge branchname # do branch ko merge karne ke liye or ye merge master branch mein aa ke hi karna hai
+git checkout -b branchname # is command se new branch ban bhi jaayegi or usme hum switch bhi ho jaayege
+
+ssh-keygen -t rsa -b 4096 -C "youremail@example.com"
+tail <path to id_rsa.pub> # Add this key to your GitHub account
+git remote add orign <ssh url.git>
+git push origin master

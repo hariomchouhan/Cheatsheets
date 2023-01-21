@@ -1,0 +1,15 @@
+install karna hai Node JS ko
+
+commands - node (filename)
+
+npm --version
+npm init - (npm init karne se npm install ho jaayega or package bhi create ho jaayega)
+npm install express - (isse express install ho jaayega)
+npm install slugify - (isse slugify install ho jaayega)
+npm install nodemon --save-dev - (isse nodemon install ho jaayega or "--save-dev" karne se keval is folder pe hi kaam karega)
+npm install nodemon --global - (isse nodemon install ho jaayega or "--global" karne se nodemon poore system mein kisi bhi folder pe work karega)
+
+npm install pug - (isse karne se pug install ho jaayega)
+pug ke baare mein {pug mein html likhane ke liye hame neeche blue line pe pug likha hoga uspe click karna hai or fir up center pe pug ko html kar lena hai isse hum pug mein html likh sakenge.
+pug mein agar bina tag ke new line likhte hai to wo error deta hai iske liye hame "|" ye wala pipe symbol lagana padata hai har jagah jaha jaha bhi line new line bina tag ke shuru ho rahi ho us line ke aage.
+"../" karne se ek folder se bahar aate hai

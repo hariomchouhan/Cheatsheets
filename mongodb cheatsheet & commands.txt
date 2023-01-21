@@ -1,0 +1,38 @@
+"install mongodb download center" google pe search karna hai or comunity wale version ko download karna hai.
+Note - install hamesha "5.0" wala version hi download karna hai.
+step1 - "Next" karna hai
+step2 - "I accept aggement" pe click karke "Next" karna hai
+step3 - "Complete" pe click karna hai or "Run mongo as a service" ko uncheck karna hai or "Next" karna hai
+step4 - "Install Mongodb Compass" ko check karke "Next" pe click karna hai
+step5 - "Install" pe click karna hai
+
+step6 - Ab Hame C drive mein jaake ek "data" naam ka folder create karna hai
+step7 - ab hame C drive ke "data" mein jaake ek or "db" naam ka folder create karna hai
+
+step8 - Ab hame C drive mein jaa kar "Program Files" wale folder mein jaa kar "MongoDB" wale folder mein jaana hai usme "server" wale folder mein jaana hai "5.0" naam ke folder mein fir "bin" wale folder mein.
+step9 - Ab ham bin mein aane ke baad upar wale pure path ko copy karna hai or "This PC" mein right click karna hai or "Properties" mein jaa kar "Advance system setting" mein jaa kar "Enviorment Variable" mein jaa kar path set karna hai.
+
+END ALL STEPS
+
+Ab POWERSHELL (Admin) ko open karna hai or command type karna hai "mongo" agar wo error deta hai to path set sahi se nahi hua hai ya version jo latest wala version hai or agar error nahi deta hai to type karna hai "mongod".
+fir us powershell ko on rehne dena hai or dusra POWERSHELL (Admin) open karna hai or type karna hai "mongo" is ko type karte hi pehle wale powershell kuch change honge.
+Ab dusre number wale POWERSHELL (Admin) pe ham command run karge bina pehle wale ko band kare.
+
+COMMANDS:-
+
+db
+test (default hai ye)
+use hariom
+switched to db hariom (iska matlab hai database hariom mein switch ho gaya or yadi nahi hoga to create automatic ho jaayega)
+
+show dbs (show dbs karne se saare databases show ho jaate hai)
+Note - (show dbs karne se wo hi files dikhegi jiname data hoga or jinme data hi nahi ho wo show nahi hogi or yadi hame file ko database mein show karni hai to kam se kam 1 document to insert karna padega)
+
+show collections (show collections karne se jitne bhi database ke andar ka data hai wo show ho jaayega)
+
+db.text (db.text karne se jitne database ke files/.text files hogi wo saari show ho jaayegi)
+
+db.text.insert({}) ("db.text.insert({})" karne se empty data insert ho jaayega or data insert karna hai to "{}" barket ke andar karna hai)
+writeResult({ "nInserted" : 1 }) - output hai
+
+db.text.insert({"name" : "Hariom"})

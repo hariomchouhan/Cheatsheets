@@ -1,0 +1,108 @@
+Mongoose is a JavaScript object-oriented programming library that creates a connection between MongoDB and the Node.js JavaScript runtime environment.
+Matlab in Hindi - Mongoose jo hai wo madat karta hai connect karne ke liye mongodb se from node js. Mongoose mongodb ke beech mein ek layer hai jo manage karti connection karne mein or node js Mongoose ko bataayega or Mongoose mongodb mein kar degi jo kaam aapne node js ki madat se karne ko kaha tha wo.
+
+setup steps:
+
+step1 - Make new folder
+step2 - open a new terminal
+step3 - cd .\folderkanaam
+step4 - npm init (isme jo bhi lagta hai deke enter enter karke yes karna hai - "pack.json" ban jaayegi)
+step5 - Make new file in a folder "index.js"
+
+--------------Mongoose install------------
+step6 - In terminal write a command "npm install mongoose" (isse "package.json" mein dependency mein mongoose aa jaayega with version)
+
+Ab jo hai Mongoose ko connect or run karne ke steps:
+
+Note - (step7) jo bhi hai wo sab index.js file mein aayega.
+step7 - 
+// getting-started.js
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/hariomKart', {useNewUrlParser: true});
+
+------------Upar wala code Error dene par ye wala code paste karke run karna hai-----------
+// getting-started.js
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/hariomKart', {useNewUrlParser: true, useUnifiedTopology: true});
+
+step8 - node index.js (Terminal mein run karna hai)
+Note - (step8) node index.js run karne par kuch bhi error nahi hai matalb code successfully run ho gaya hai
+
+step9 - 
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function() {
+    // we're connected!
+    console.log("we are connected bro/sis..")
+});
+
+------------yeh wala code paste karne ke baad "node index.js" run karna hai or yadi "we are connected bro/sis.." ye likha hua teminal pe aaye to successfully connected ho gaya hai------------
+
+-------------OPTIONAL STEP & IMPORTANT-------------------
+
+step10 - (Humne step7 mein jo code diya tha usme localhost ka address hai jo ki set karna hai mongodb mein aapki jis bhi folder ya file ko access ya edit karna uska address put karna hai - "For Exampale - 'mongodb://localhost/hariomKart')
+
+
+
+
+---------------Reference In CWH #86----------------------
+First of is - POWERSHELL (Admin) me "mongod" Run.
+
+
+---------------Schema------------------
+Schema - (Schema ka matalb hai ki aap kis tarah ka data apply karna ya kis tarah ka data store karna chahate hai wo hai Schema ya wo information hai Schema.)
+
+--Schema set--
+var kittySchema = new mongoose.Schema({
+    name: String
+});
+
+---"OPTIONAL" - Methods---
+(Ham jaise hi Methods add karenge Ham usko execute kar sakte hai)
+Note - (Methods ko ham apply tab hi kar sakte hai jab hamara model nahi bana hai model banane ke baad ham ise apply nahi kar sakte hai ham ise Schema ke baad or model ke beech mein hi apply kar sakte hai.)
+
+kittySchema.methods.speak = function speak() {
+    var greeting = "My name is " + this.name
+  };
+
+---Another code of Methods---
+
+kittySchema.methods.speak = function speak() {
+  const greeting = this.name
+    ? "Meow name is " + this.name
+    : "I don't have a name";
+  console.log(greeting);
+};
+
+
+-------------Model----------------
+---(Is code ko karne se schema lock ho jaayega ab hum change nahi kar sakte hai | Schema or Model mein difference hai ki Schema mein hum batate hai ki kon si field kya rahegi Or Model jo hai wo finaliy compiled Schema hai, Ek Schema Model mein compile hota hai or jo naam ka model hai wo yahan pe ban gaya hai)---
+Note - (Model jo hai hamesha pehla argument ka Plural - "Plural ka matalb hai ki Jaise Kitty ka Kitties" bana leta hai Database mein store karte time, or ab wo khud automatic saare objects ko is collection mein save karega.)
+
+var Kitten = mongoose.model('hariomKitty', kittySchema);
+
+
+------------Objects----------------
+---Objects = Documents - Data---
+
+Note - (Object hamesh Schema or Model banane ke baad hi banana hai)
+
+(is tarah se objects ya data ham node js ki madat se lenge)
+var hariomKitty = new Kitten({ name: 'hariomKitty' });
+var hariomKitty2 = new Kitten({ name: 'hariomKitty2' });
+
+---Data ko Database mein save karne ke liye---
+
+hariomKitty.save(function (err, hariomKitty) {
+    if (err) return console.error(err);
+})
+
+
+-----------Find / Searching code for node js---------------
+
+Note - ( {name: "hariomKitty"} is mein hame jo bhi filter ya search karna hai wo sakte.)
+
+Kitten.find( {name: "hariomKitty"}, function (err, kittens) {
+    if (err) return console.error(err);
+    console.log(kittens);
+})
