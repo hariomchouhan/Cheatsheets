@@ -3,6 +3,7 @@ git config --global user.name Harry
 git config --global user.email youremail@example.com
 git init
 git add .
+git add -A
 git commit -m "Initial Commit"
 git commit -a -m "adding some files" # files staged bhi ho jaayegi or commit bhi ho jaayegi
 git status # Just to see
