@@ -37,3 +37,4 @@ tail <path to id_rsa.pub> # Add this key to your GitHub account
 git remote add orign <ssh url.git>
 git push origin master
 git push -u origin master
+git push # ek baat "git push -u origin main/master" command run ho jati hai uske baad har baar ye command run kar sakte hai.
