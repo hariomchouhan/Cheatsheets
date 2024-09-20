@@ -1,0 +1,7 @@
+#### folderName>android>local.properties ####
+
+# for mac, use this
+# sdk.dir = /Users/USERNAME/Library/Android/Sdk
+
+# for windows, use this
+sdk.dir = C:\Users\Hariom Chouhan\AppData\local\Android\Sdk
