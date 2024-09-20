@@ -26,6 +26,8 @@ git merge branchname # do branch ko merge karne ke liye or ye merge master branc
 git checkout -b branchname # is command se new branch ban bhi jaayegi or usme hum switch bhi ho jaayege
 
 
+rm -fr .git # to remove the directory
+
 git remote add origin https://github.com/hariomchouhan/myServer.git
 git remote # branch dikhayega saari
 git remote -v # url dikhayega push or fetch karne ke liye
@@ -38,3 +40,30 @@ git remote add orign <ssh url.git>
 git push origin master
 git push -u origin master
 git push # ek baat "git push -u origin main/master" command run ho jati hai uske baad har baar ye command run kar sakte hai.
+
+
+**************************** Symlink *****************************
+
+ it looks like styler02 is not a symlink but a regular directory (since it's marked as drwxr-xr-x, meaning it's a directory). The issue seems to be with GitHub interpreting or displaying it as a symlink, possibly due to something in the .git history or configuration.
+
+ Here’s how you can handle this:
+
+Step-by-Step Fix:
+
+1. Ensure styler02 is a regular folder:
+
+Since it's already a regular folder, confirm that all the contents inside are as expected.
+
+2. Remove the folder from Git's tracking (but keep it locally): You can remove the directory from Git's tracking without deleting it locally:
+
+git rm -r --cached styler02
+
+This will untrack the folder styler02 in Git without removing it from your local system.
+
+3. Re-add the folder to Git and push it again:
+
+Now, add the styler02 folder back as a normal directory:
+
+git add styler02
+git commit -m "Add styler02 as regular directory"
+git push origin main
